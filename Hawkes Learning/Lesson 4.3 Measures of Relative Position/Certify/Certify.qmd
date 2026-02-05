@@ -1,0 +1,176 @@
+---
+title: "Certify"
+format: html
+---
+
+```{r}
+#| include: false
+library(knitr)
+```
+
+## Lesson 4.3 Measures of Relative Position
+
+```{r}
+knitr::include_graphics("Q1C.png")
+```
+$$\text{percentile of x}=\frac{\text{number of values less that or equal to x}}{\text{total number of data values}}*100$$
+```{r}
+
+# create an array
+q1_array <- c(
+  1.34, 1.55, 1.44, 1.48, 1.62, 1.45, 1.58, 1.67, 1.34, 1.57, 1.57, 1.40, 1.51, 1.45, 1.59, 1.38, 1.53, 1.53, 1.38, 1.61
+)
+
+# calculate the # of values "<=" numerator
+q1_numerator <- sum(q1_array <= 1.44)
+
+# calculate the total # of observations
+q1_denominator <- length(q1_array)
+
+# calculate the formula
+q1_percentile <- (q1_numerator/q1_denominator)*100
+
+print(q1_percentile)
+```
+
+```{r}
+knitr::include_graphics("Q2C.png")
+```
+```{r}
+# create an array!
+q2_array <- c(
+  42, 47, 49, 49, 51, 53, 54, 59, 62, 63, 66, 70, 71, 72, 73, 75, 77, 77
+  )
+
+# find the summary! (median is Q2)
+summary(q2_array)
+```
+
+```{r}
+knitr:: include_graphics("Q3C.png")
+```
+
+```{r}
+# create an array :P
+q3_array <- c(
+  1.56, 1.67, 1.55, 1.32, 1.58, 1.56, 1.31, 1.45, 1.47, 1.54, 1.67, 1.54, 1.37, 1.46, 1.64
+)
+
+# find the percentile
+diameter <- quantile(q3_array, probs = .32)
+
+print(diameter)
+```
+
+```{r}
+
+# finding the IQR of a box plot
+q4_q3 <- 246
+q4_q1 <- 187
+
+q4_q3 - q4_q1
+```
+
+Consider a set of data in which the sample mean is 43.6
+ and the sample standard deviation is 4.7
+.  Calculate the z-score given that x=46.9
+.  Round your answer to two decimal places.
+$$ z = \frac{x - \mu}{\sigma} $$
+```{r}
+q5_mean <- 43.6
+q5_sd <- 4.7
+q5_x <- 46.9
+
+q5_z <- (q5_x-q5_mean)/q5_sd
+
+print(q5_z)
+```
+
+Calculate the interquartile range of the given data.
+
+52,7,6,26,34,49,38,18,33,34,38,3,18,47,54
+
+```{r}
+# create an array
+q6_array <- c(
+  52, 7, 6, 26, 34, 49, 38, 18, 33, 34, 38, 3, 18, 47, 54
+)
+
+# find the IQR
+IQR(q6_array)
+```
+
+Construct a box plot from the given data.
+
+Scores on a Statistics Test:  53,69,69,71,69,88,75,75,47,87
+
+```{r}
+# omg create an array
+q7_array <- c(
+  53,69,69,71,69,88,75,75,47,87
+)
+
+# omg find the summary
+summary(q7_array)
+```
+
+Determine if there is an outlier in the given data. If yes, please state the value(s) that are considered outliers.
+
+26,34,27,51,38,36,39,35,43,55,2,40,23,26
+
+```{r}
+# ...........(create an array twin)
+
+q8_array <- c(
+  26,34,27,51,38,36,39,35,43,55,2,40,23,26
+)
+
+# create a box plot
+boxplot(q8_array)
+
+# find outliers
+q8_outlier_values <- boxplot.stats(q8_array)$out
+print(q8_outlier_values)
+
+```
+
+The number of hours per week that the television is turned on is determined for each family in a sample.  The mean of the data is 31 hours and the median is 27.2 hours.  Twenty-four of the families in the sample turned on the television for 16 hours or less for the week.  The 7th percentile of the data is 16 hours.
+
+Step 2 of 5 :  Approximately how many families are in the sample? Round your answer to the nearest integer.
+
+$$\text{percentile of x}=\frac{\text{number of values less that or equal to x}}{\text{total number of data values}}*100$$
+```{r}
+# assign values
+q9_percentile <- 7
+q9_numerator <- 24
+
+# isolate the denominator and solve
+
+q9_denominator <- (q9_numerator*100)/q9_percentile
+
+print(q9_denominator)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

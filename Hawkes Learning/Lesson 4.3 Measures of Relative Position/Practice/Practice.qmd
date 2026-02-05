@@ -1,0 +1,179 @@
+---
+title: "Practice"
+format: html
+---
+
+```{r}
+#| include: false
+library(knitr)
+```
+
+## Lesson 4.3 Measures of Relative Position
+
+```{r}
+knitr::include_graphics("4_3Q1.jpg")
+```
+```{r}
+# Enter data
+diameters <- c(
+  1.64, 1.59, 1.30, 1.51, 1.41, 1.64, 1.59, 1.47, 1.61, 1.68, 1.56, 1.32, 1.64, 1.41, 1.49
+)
+
+#Calculate the 53rd percentile
+quantile(diameters, probs = 0.53)
+
+```
+
+```{r}
+knitr::include_graphics("4_3Q2.jpg")
+```
+
+$$ z = \frac{x - \mu}{\sigma} $$
+```{r}
+# assign values
+x <- 61.6
+smean <- 52.3
+sd <- 3.8
+
+# calculate using the formula
+(x-smean)/sd
+```
+
+```{r}
+knitr::include_graphics("4_3Q3.jpg")
+```
+
+```{r}
+# assign the data
+scores <- c(
+  53, 55, 81, 51, 55, 70, 79, 89, 55, 94
+)
+
+# create a summary of the data
+summary(scores)
+```
+
+The whiskers will extend out to the min and the max. The beginning of the box will start at the 1st Qu. The end of the box will be at the 3rd Qu. The line through the box is the Median.
+
+```{r}
+knitr::include_graphics("4_3Q4.jpg")
+```
+
+```{r}
+# assign the data
+data <- c(
+  30, 5, 42, 45, 37, 28, 24, 21, 25, 48, 26, 55, 30, 1, 56
+)
+
+# find the interquartile range
+IQR(data)
+```
+
+```{r}
+knitr::include_graphics("4_3Q5.jpg")
+```
+
+$$\text{percentile of x}=\frac{\text{number of values less that or equal to x}}{\text{total number of data values}}*100$$
+
+```{r}
+# assign values
+percentile_of_x <- 7
+pvalues <- 24
+
+# isolate the missing variable 'total number of data values' and calculate
+(pvalues*100)/percentile_of_x
+```
+
+```{r}
+knitr::include_graphics("4_3Q6.jpg")
+```
+
+```{r}
+# assign values
+percentile <- 50
+tvalues <- 343
+
+# isolate the missing variable 'total number of data values' and calculate
+tvalues*(percentile/100)
+
+# answer = true
+```
+
+```{r}
+knitr::include_graphics("4_3Q7.jpg")
+```
+
+```{r}
+# step one: create an array
+array <- c(
+  5.7, 6.3, 5.7, 8.6, 6.7, 6.8, 6.5, 8.2, 6.5, 8.1, 5.9, 5.8, 7.4, 9.5, 6.9, 8.5, 7.3, 7.3, 5.7, 8.0
+)
+
+# step 2: order the array
+ordered_array <- sort(array)
+print(ordered_array)
+
+# step 3: count values less than or equal to 6.6 and total number of values
+
+threshold <- 6.6
+count <- sum(ordered_array <= threshold)
+total_numbers <- length(ordered_array)
+
+print(count)
+print(total_numbers)
+```
+
+$$\text{percentile of x}=\frac{\text{number of values less that or equal to x}}{\text{total number of data values}}*100 = \frac{8}{20}*100$$
+```{r}
+# step 4
+(8/20)*100
+```
+
+```{r}
+knitr::include_graphics("4_3Q8.jpg")
+```
+
+```{r}
+
+# the IQR is the numbers between 193 and 243
+
+243 - 193
+
+```
+
+```{r}
+knitr::include_graphics("4_3Q9.jpg")
+```
+
+```{r}
+# create an array
+
+commute_time <- c(
+  23, 23, 23, 27, 27, 32, 32, 35, 36, 37, 38, 39, 46, 51, 52, 53, 55, 58
+)
+
+# Q2 = Median
+
+summary(commute_time)
+
+```
+
+```{r}
+knitr:: include_graphics("4_3Q10.jpg")
+```
+
+```{r}
+# create an array
+
+q10_array <- c(
+  39, 34, 52, 38, 30, 10, 18, 34, 44, 32, 51, 43, 39, 51
+)
+
+# create a box plot
+boxplot(q10_array)
+
+# find outliers
+outlier_values <- boxplot.stats(q10_array)$out
+print(outlier_values)
+
+```
