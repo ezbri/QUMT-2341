@@ -1,0 +1,148 @@
+---
+title: "certify"
+format: html
+---
+
+# 4.7 Measures of Association Between Two Variables
+
+**Q1. A personnel director is interested in studying the relationship (if any) between age and salary. Sixteen employees are randomly selected, and their ages and salaries are recorded. Determine the correlation coefficient. Round your answer to three decimal places.**
+
+| Age | Salary ($) | Age | Salary ($) |
+| --: | ---------: | --: | ---------: |
+|  42 |     51,000 |  44 |     46,000 |
+|  22 |     42,000 |  44 |     30,000 |
+|  44 |     37,000 |  60 |     61,000 |
+|  37 |     21,000 |  50 |     45,000 |
+|  27 |     47,000 |  21 |     23,000 |
+|  22 |     30,000 |  26 |     33,000 |
+|  33 |     41,000 |  60 |     57,000 |
+|  48 |     40,000 |  32 |     55,000 |
+
+```{r}
+ # make array
+q1_x <- c(
+  42, 22, 44, 37, 27, 22, 33, 48, 44, 44, 60, 50, 21, 26, 60, 32
+)
+q1_y <- c(
+  51000, 42000, 37000, 21000, 47000, 30000, 41000, 40000, 46000, 30000, 61000, 45000, 23000, 33000, 57000, 55000
+)
+
+# calculate correlation coefficient
+cor(q1_x,q1_y)
+```
+
+**Q2. The following data gives the number of hours 10 students spent studying and their corresponding grades on their midterm exams. Calculate the correlation coefficient, r. Round your answer to three decimal places.**
+
+| Hours Spent Studying | Midterm Grades |
+| -------------------: | -------------: |
+|                  1.0 |             63 |
+|                  1.5 |             66 |
+|                  2.5 |             69 |
+|                  3.0 |             72 |
+|                  3.5 |             75 |
+|                  4.0 |             78 |
+|                  4.5 |             81 |
+|                  5.0 |             84 |
+|                  5.5 |             90 |
+|                  6.0 |             96 |
+
+```{r}
+ # make array
+q2_x <- c(
+  1, 1.5, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6
+)
+q2_y <- c(
+  63, 66, 69, 72, 75, 78, 81, 84, 90, 96
+)
+
+# calculate correlation coefficient
+cor(q2_x,q2_y)
+```
+
+**Q3. Consider the relationship between the number of bids an item on eBay received and the item's selling price. The following is a sample of 5 items sold through an auction.**
+
+| Price in Dollars | Number of Bids |
+| ---------------: | -------------: |
+|               20 |             11 |
+|               23 |             13 |
+|               26 |             15 |
+|               32 |             18 |
+|               41 |             20 |
+
+```{r}
+ # make array
+q3_x <- c(
+ 20, 23, 26, 32, 41
+)
+q3_y <- c(
+  11, 13, 15, 18, 20
+)
+
+# calculate correlation coefficient
+cor(q3_x,q3_y)
+
+```
+
+**Q4. A manufacturing company which produces laminate for countertops is interested in studying the relationship between the number of hours of training an employee receives and the number of defects per countertop produced. Ten employees are randomly selected. The number of hours of training which each employee has received is recorded and the number of defects on the most recent countertop produced is determined. The results are as follows.**
+
+| Hours of Training | Defects per Countertop |
+| ----------------: | ---------------------: |
+|                 2 |                      5 |
+|                 4 |                      8 |
+|                 9 |                      5 |
+|                 6 |                      4 |
+|                 2 |                      8 |
+|                 6 |                      1 |
+|                 4 |                      4 |
+|                 2 |                      9 |
+|                 8 |                      4 |
+|                 7 |                      5 |
+
+```{r}
+ # make array
+q4_x <- c(
+ 2, 4, 9, 6, 2, 6, 4, 2, 8, 7
+)
+q4_y <- c(
+  5, 8, 5, 4, 8, 1, 4, 9, 4, 5
+)
+
+# calculate correlation coefficient
+cor(q4_x,q4_y)
+
+```
+
+**Q5. The following table gives the weeks of gestation and corresponding birth weights for a sample of 5
+ babies. Calculate the correlation coefficient, r. Round your answer to three decimal places.**
+ 
+ | Weeks of Gestation | Weight (in pounds) |
+| -----------------: | -----------------: |
+|                 35 |                4.5 |
+|                 36 |                5.5 |
+|                 39 |                6.5 |
+|                 40 |                7.5 |
+|                 41 |                8.5 |
+
+```{r}
+ # make array
+q5_x <- c(
+ 35, 36, 39, 40, 41
+)
+q5_y <- c(
+  4.5, 5.5, 6.5, 7.5, 8.5
+)
+
+# calculate correlation coefficient
+cor(q5_x,q5_y)
+
+```
+
+
+
+
+
+
+
+
+
+
