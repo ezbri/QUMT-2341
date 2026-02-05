@@ -1,0 +1,166 @@
+---
+title: "Practice"
+format: html
+---
+
+# 4.7 Measures of Association Between Two Variables
+
+**Q.1 Consider the relationship between the number of bids an item on eBay received and the item's selling price. The following is a sample of 5 items sold through an auction.**
+
+| Price in Dollars | Number of Bids |
+|------------------|----------------|
+| 110              | 11             |
+| 120              | 14             |
+| 170              | 17             |
+| 180              | 19             |
+| 200              | 20             |
+
+
+Calculate the correlation coefficient, r. Round your answer to three decimal places.
+
+$$
+r = 
+\frac{
+  n\sum(XY) - \sum X \sum Y
+}{
+  \sqrt{\,n\sum X^2-(\sum X)^2\,}
+  \sqrt{\,n\sum Y^2-(\sum Y)^2\,}
+}
+$$
+
+```{r}
+# assign variables
+q1_x <- c(
+110, 120, 170, 180, 200  
+)
+
+q1_y <- c(
+  11, 14, 17, 19, 20
+)
+
+q1_n <- sum(length(q1_x))
+
+# apply formula
+q1_numerator <- (q1_n*sum(q1_x*q1_y))-sum(q1_x)*sum(q1_y)
+
+q1_denominator <- sqrt(q1_n*sum(q1_x^2)-(sum(q1_x)^2))*sqrt(q1_n*sum(q1_y^2)-(sum(q1_y)^2))
+
+q1_r <- q1_numerator/q1_denominator
+
+# verify/use this code for quick answer *face palm*
+cor(q1_x, q1_y)
+
+print(q1_r)
+```
+
+**Q.2 A manufacturing company which produces laminate for countertops is interested in studying the relationship between the number of hours of training an employee receives and the number of defects per countertop produced. Ten employees are randomly selected. The number of hours of training which each employee has received is recorded and the number of defects on the most recent countertop produced is determined. The results are as follows.**
+
+| Hours of Training | Defects per Countertop |
+|-------------------|------------------------|
+| 2                 | 9                      |
+| 8                 | 3                      |
+| 6                 | 5                      |
+| 7                 | 4                      |
+| 5                 | 5                      |
+| 9                 | 2                      |
+| 1                 | 8                      |
+| 2                 | 6                      |
+| 1                 | 7                      |
+| 9                 | 1                      |
+
+```{r}
+# array
+q2_x <- c(
+  2,8,6,7,5,9,1,2,1,9
+)
+
+q2_y <- c(
+  9,3,5,4,5,2,8,6,7,1
+)
+
+# cop out
+cor(q2_x,q2_y)
+```
+ 
+**Q3. Consider the relationship between the number of bids an item on eBay received and the item's selling price. The following is a sample of 5 items sold through an auction.**
+
+| Price in Dollars | Number of Bids |
+|------------------|----------------|
+| 23               | 11             |
+| 32               | 12             |
+| 38               | 14             |
+| 41               | 18             |
+| 50               | 20             |
+
+**Calculate the correlation coefficient, r. Round your answer to three decimal places**
+
+```{r}
+# array time
+q3_x <- c(
+  23,32,38,41,50
+)
+q3_y <- c(
+  11,12,14,18,20
+)
+
+# use the cop out code
+cor(q3_x,q3_y)
+```
+
+**Q4. A personnel director is interested in studying the relationship (if any) between age and salary. Sixteen employees are randomly selected, and their ages and salaries are recorded.**
+
+| Age | Salary ($) | Age | Salary ($) |
+|-----|------------|-----|------------|
+| 42  | 51,000     | 44  | 46,000     |
+| 22  | 42,000     | 44  | 30,000     |
+| 44  | 37,000     | 60  | 61,000     |
+| 37  | 21,000     | 50  | 45,000     |
+| 27  | 47,000     | 21  | 23,000     |
+| 22  | 30,000     | 26  | 33,000     |
+| 33  | 41,000     | 60  | 57,000     |
+| 48  | 40,000     | 32  | 55,000     |
+
+**Determine the correlation coefficient. Round your answer to three decimal places.**
+
+```{r}
+#hey hey array
+q4_x <- c(
+ 42,22,44,37,27,22,33,48,44,44,60,50,21,26,60,32
+)
+q4_y <- c(
+  51000,42000,37000,21000,47000,30000,41000,40000,46000,30000,61000,45000,23000,33000,57000,55000
+)
+
+#correlation formula
+cor(q4_x,q4_y)
+```
+
+**Q5. The following data gives the number of hours 10 students spent studying and their corresponding grades on their midterm exams.**
+
+| Hours Spent Studying | Midterm Grades |
+|----------------------|----------------|
+| 0.5                  | 63             |
+| 1                    | 66             |
+| 1.5                  | 69             |
+| 2.5                  | 72             |
+| 3                    | 75             |
+| 3.5                  | 78             |
+| 4                    | 84             |
+| 4.5                  | 87             |
+| 5                    | 96             |
+| 5.5                  | 99             |
+
+**Calculate the correlation coefficient, r. Round your answer to three decimal places.*
+
+```{r}
+# array
+q5_x <- c(
+  0.5,1,1.5,2.5,3,3.5,4,4.5,5,5.5
+)
+q5_y <- c(
+  63,66,69,72,75,78,84,87,96,99
+)
+
+# what it is
+cor(q5_x,q5_y)
+```
